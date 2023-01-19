@@ -68,5 +68,3 @@ spring:
         event-out:
           destination: labshoppubsub
           contentType: application/json
-
-
