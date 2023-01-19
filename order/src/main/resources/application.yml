@@ -1,6 +1,5 @@
 server:
   port: 8080
-//<<< Resilency / Circuit Breaker
 feign:
   hystrix:
     enabled: true
@@ -8,7 +7,6 @@ hystrix:
   command:
     default:
       execution.isolation.thread.timeoutInMilliseconds: 500
-//>>> Resilency / Circuit Breaker
 spring:
   application:
     name: order
@@ -57,14 +55,10 @@ spring:
       bindings:
         event-in:
           group: order
-//<<< EDA / Topic Name
           destination: labshoppubsub
-//>>> EDA / Topic Name
           contentType: application/json
         event-out:
-//<<< EDA / Topic Name
           destination: labshoppubsub
-//>>> EDA / Topic Name
           contentType: application/json
 
 logging:
