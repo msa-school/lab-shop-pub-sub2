@@ -11,24 +11,13 @@ import java.util.Date;
 @Table(name="Inventory_table")
 @Data
 
-//<<< DDD / Aggregate Root
+
 public class Inventory  {
 
-
-    
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    
-    
-    
-    
-    
-    private Long id;
-    
-    
-    
-    
-    
+
+    private Long id;   
     private Long stock;
 
     @PostPersist
@@ -41,9 +30,6 @@ public class Inventory  {
     }
 
 
-
-
-//<<< Clean Arch / Port Method
     public static void decreaseStock(OrderPlaced orderPlaced){
 
         /** Example 1:  new item 
@@ -65,8 +51,5 @@ public class Inventory  {
 
         
     }
-//>>> Clean Arch / Port Method
-
-
 }
-//>>> DDD / Aggregate Root
+
